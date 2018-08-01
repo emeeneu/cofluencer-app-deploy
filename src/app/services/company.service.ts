@@ -10,6 +10,7 @@ import { MsgService } from './msg.service';
 import { YoutubeDatauserService } from './youtube-datauser.service';
 import { TwitterInfoComponent } from '../components/twitter-info/twitter-info.component';
 import { TwtDatauserService } from './twt-datauser.service';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable()
 export class CompanyService {
@@ -38,7 +39,8 @@ export class CompanyService {
   confluencersList: any = [];
 
   private sub: any;
-  private API_URL = 'http://localhost:3000/api';
+  // private API_URL = 'http://localhost:3000/api';
+  private API_URL = environment.apiUrl;
   private newCampaign: any;
 
   constructor(

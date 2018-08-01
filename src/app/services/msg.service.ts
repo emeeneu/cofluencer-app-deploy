@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import { AuthService } from './auth.service';
 import { ToasterService } from '../services/toaster.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable()
 export class MsgService {
@@ -17,7 +18,8 @@ export class MsgService {
   options = {
     withCredentials: true,
   };
-  private API_URL = 'http://localhost:3000/api';
+  // private API_URL = 'http://localhost:3000/api';
+  private API_URL = environment.apiUrl;
 
   constructor(
     private httpClient: HttpClient,

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { ToasterService } from '../services/toaster.service';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable()
 export class YoutubeDatauserService {
@@ -19,7 +20,9 @@ export class YoutubeDatauserService {
     withCredentials: true,
   };
 
-  private API_URL = 'http://localhost:3000/api';
+  // private API_URL = 'http://localhost:3000/api';
+  private API_URL = environment.apiUrl;
+
   constructor(
     private httpClient: HttpClient,
     private sanitizer: DomSanitizer,

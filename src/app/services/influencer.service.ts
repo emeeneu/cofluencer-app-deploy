@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { AuthService } from './auth.service';
 import { ToasterService } from '../services/toaster.service';
 import { MsgService } from './msg.service';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable()
 export class InfluencerService {
@@ -27,7 +28,8 @@ export class InfluencerService {
   options = {
     withCredentials: true,
   };
-  private API_URL = 'http://localhost:3000/api';
+  // private API_URL = 'http://localhost:3000/api';
+  private API_URL = environment.apiUrl;
 
   constructor(
     private httpClient: HttpClient,

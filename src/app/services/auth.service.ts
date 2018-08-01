@@ -3,6 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/toPromise';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,9 @@ export class AuthService {
   private user: any;
   private userChange: Subject<any> = new Subject();
 
-  private API_URL = 'http://localhost:3000/auth';
+  // private API_URL = 'http://localhost:3000/auth';
+  private API_URL = environment.apiUrlAuth;
+
 
   userChange$: Observable<any> = this.userChange.asObservable();
 

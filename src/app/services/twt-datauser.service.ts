@@ -3,6 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { ToasterService } from '../services/toaster.service';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable()
 export class TwtDatauserService {
@@ -14,7 +15,9 @@ export class TwtDatauserService {
     withCredentials: true,
   };
 
-  private API_URL = 'http://localhost:3000/api';
+  // private API_URL = 'http://localhost:3000/api';
+  private API_URL = environment.apiUrl;
+
   constructor(
     private httpClient: HttpClient,
     private toaster: ToasterService,
