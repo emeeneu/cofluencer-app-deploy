@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileSelectDirective, FileUploadModule } from 'ng2-file-upload';
 import { ScrollEventModule } from 'ngx-scroll-event';
 
 import { AuthService } from './services/auth.service';
@@ -157,7 +157,7 @@ const routes: Routes = [
     CompanyPublicComponent,
     CompanyPrivateComponent,
     CampaignsComponent,
-    FileSelectDirective,
+    // FileSelectDirective,
     CampaignCardComponent,
     EditImageCoverComponent,
     TagsComponent,
@@ -186,6 +186,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ScrollEventModule,
+    FileUploadModule,
   ],
   providers: [
     IgDatauserService,
