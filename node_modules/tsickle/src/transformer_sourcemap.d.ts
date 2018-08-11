@@ -1,4 +1,3 @@
-/// <amd-module name="tsickle/src/transformer_sourcemap" />
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -6,6 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+/// <amd-module name="tsickle/src/transformer_sourcemap" />
 import { SourceMapper } from './source_map_utils';
 import * as ts from './typescript';
 /**

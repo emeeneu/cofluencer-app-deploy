@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/observable';
+import { Subject } from 'rxjs/subject';
 import 'rxjs/add/operator/toPromise';
 import { environment } from '../../environments/environment.prod';
 

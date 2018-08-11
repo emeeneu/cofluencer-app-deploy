@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+// import { Observable } from 'rxjs/Observable';
+// import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/toPromise';
 import { AuthService } from './auth.service';
 import { ToasterService } from '../services/toaster.service';

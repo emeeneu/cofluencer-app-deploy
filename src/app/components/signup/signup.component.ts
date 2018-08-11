@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
     email: '',
     password: ''
   };
+  barLabel: any;
 
   public myColors = ['#EE5622', '#ECA72C', '#44355B', '#28AFB0', '#28AFB0'];
   user: any;

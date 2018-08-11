@@ -1,5 +1,12 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 /// <amd-module name="tsickle/src/tsickle" />
-import * as es5processor from './es5processor';
+import * as googmodule from './googmodule';
 import { ModulesManifest } from './modules_manifest';
 import { SourceMapper } from './source_map_utils';
 import * as ts from './typescript';
@@ -40,9 +47,6 @@ export declare const EXTERNS_HEADER = "/**\n * @externs\n * @suppress {duplicate
  * be avoided by tsickle's "declare ..." => externs.js conversion.
  */
 export declare let closureExternsBlacklist: string[];
-export declare function formatDiagnostics(diags: ReadonlyArray<ts.Diagnostic>): string;
-/** Returns a fileName:line:column string for the given position in the file. */
-export declare function formatLocation(sf: ts.SourceFile, start: number | undefined): string;
 export declare function annotate(typeChecker: ts.TypeChecker, file: ts.SourceFile, host: AnnotatorHost, tsHost: ts.ModuleResolutionHost, tsOpts: ts.CompilerOptions, sourceMapper?: SourceMapper): {
     output: string;
     diagnostics: ts.Diagnostic[];
@@ -55,7 +59,7 @@ export declare function writeExterns(typeChecker: ts.TypeChecker, file: ts.Sourc
 export declare function getGeneratedExterns(externs: {
     [fileName: string]: string;
 }): string;
-export interface TsickleHost extends es5processor.Es5ProcessorHost, AnnotatorHost {
+export interface TsickleHost extends googmodule.GoogModuleProcessorHost, AnnotatorHost {
     /**
      * Whether to downlevel decorators
      */
@@ -79,13 +83,18 @@ export interface TsickleHost extends es5processor.Es5ProcessorHost, AnnotatorHos
      * useful for e.g. third party code.
      */
     shouldIgnoreWarningsForPath(filePath: string): boolean;
+    /** Whether to convert CommonJS require() imports to goog.module() and goog.require() calls. */
+    googmodule: boolean;
 }
 export declare function mergeEmitResults(emitResults: EmitResult[]): EmitResult;
 export interface EmitResult extends ts.EmitResult {
     modulesManifest: ModulesManifest;
-    /** externs.js files produced by tsickle, if any. */
+    /**
+     * externs.js files produced by tsickle, if any. module IDs are relative paths from
+     * fileNameToModuleId.
+     */
     externs: {
-        [fileName: string]: string;
+        [moduleId: string]: string;
     };
 }
 export interface EmitTransformers {

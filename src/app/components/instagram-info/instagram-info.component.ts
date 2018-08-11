@@ -23,7 +23,7 @@ export class InstagramInfoComponent implements OnInit {
   }
 
   getInstaInfo() {
-    this.userInstaInfo.getInfoInstaUser()
-      .subscribe((instaInfo) => this.instaInfo = instaInfo);
+    // this.userInstaInfo.getInfoInstaUser()
+    //   .subscribe((instaInfo) => this.instaInfo = instaInfo);
   }
 }

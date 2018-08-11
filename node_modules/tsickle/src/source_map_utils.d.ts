@@ -1,4 +1,3 @@
-/// <amd-module name="tsickle/src/source_map_utils" />
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -6,6 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+/// <amd-module name="tsickle/src/source_map_utils" />
 import { RawSourceMap, SourceMapConsumer, SourceMapGenerator } from 'source-map';
 import * as ts from './typescript';
 /**
@@ -74,5 +74,12 @@ export interface SourceMapper {
      * spanning from `generated` (an offset in the file) for `length` characters.
      */
     addMapping(originalNode: ts.Node, original: SourcePosition, generated: SourcePosition, length: number): void;
+    /**
+     * Adds a mapping from `startPosition` to `endPosition` in the generated output. Contrary to
+     * addMapping, this method does not attempt to add mappings for child nodes, nor does it always
+     * emit a mapping for the given `originalNode`. It also does not adjust original positions for any
+     * leading comments.
+     */
+    addMappingForRange(originalNode: ts.Node, startPosition: number, endPosition: number): void;
 }
 export declare const NOOP_SOURCE_MAPPER: SourceMapper;

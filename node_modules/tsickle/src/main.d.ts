@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /// <amd-module name="tsickle/src/main" />
 import * as ts from './typescript';
 import * as tsickle from './tsickle';
