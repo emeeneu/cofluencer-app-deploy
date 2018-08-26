@@ -50,7 +50,7 @@
     "typescript": "2.9.2",
     "webpack": "^4.16.5",
     "zone.js": "^0.8.26",
-    "aws-sign2": "0.0.0"
+    "aws-sign2": "^0.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
