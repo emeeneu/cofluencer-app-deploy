@@ -12,17 +12,17 @@ import { InfluencerService } from '../../services/influencer.service';
 })
 export class AppPageComponent implements OnInit {
 
-  user: any;
+  public user: any;
   toggleMenu: boolean;
   toggleMoreButton: boolean;
   youtubeProfile: boolean;
   twitterProfile: boolean;
 
   constructor(
-    private session: AuthService,
+    public session: AuthService,
     private router: Router,
-    private companyService: CompanyService,
-    private influencer: InfluencerService,
+    public companyService: CompanyService,
+    public influencer: InfluencerService,
     private toaster: ToasterService
   ) { }
 
@@ -56,7 +56,7 @@ export class AppPageComponent implements OnInit {
   }
 
   checkYoutube() {
-    if(this.user.socialLinks.youtube == null || this.user.socialLinks.youtube === ''){
+    if (this.user.socialLinks.youtube == null || this.user.socialLinks.youtube === '') {
       this.youtubeProfile = false;
     } else {
       this.youtubeProfile = true;
